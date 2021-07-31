@@ -1,0 +1,3 @@
+These files in this "values" folder were derived from frameworks_base/core/res/res/values
+
+They are under the Apache 2 Licence

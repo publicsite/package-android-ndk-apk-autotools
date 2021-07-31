@@ -45,6 +45,21 @@ finally run
 	./runAAPT.sh
 to bundle the apk
 
+
+a version of dx is also included, in the hope it can be used to create dalvik bytecode
+
+the script
+	./getDxUpstream.sh
+gets dx tool from upstream
+for clarity, this has already been run and does not need running again
+
+next run
+	./buildDx.sh
+to build dx
+
+to use, run
+	java -jar dx.jar
+
 ==Directories and other files==
 
 The directory, "project" contains the NDK application to be packaged, within that folder is the C/C++ binaries that have been linked against the bionic C library.

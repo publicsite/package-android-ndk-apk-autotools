@@ -71,3 +71,7 @@ More information can be found at res/values/about.txt
 ==LICENCE==
 
 in-keeping with the stuff in res/values. I have chosen to release this under the APACHE2 licence. A copy can found in LICENCE.TXT or at https://www.apache.org/licenses/LICENSE-2.0.txt
+
+==DONATE==
+
+https://www.paypal.com/donate/?hosted_button_id=SZABYRV48SAXW

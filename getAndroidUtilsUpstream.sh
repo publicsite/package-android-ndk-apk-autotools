@@ -1,5 +1,8 @@
 #!/bin/sh
 
+OLD_UMASK="$(umask)"
+umask 0022
+
 if [ -d "${PWD}/android-utils" ]; then
 	rm -rf "${PWD}/android-utils"
 fi
@@ -19,3 +22,5 @@ rm android-utils/configure
 sed -i "249,254d" android-utils/libutils/include/utils/Vector.h
 sed -i "s#block.getComment(\&len) ? block.getComment(\&len)#block.getComment(\&len) ? (char16_t*)block.getComment(\&len)#g" android-utils/aapt/ResourceTable.cpp
 sed -i "s#uint16_t\* ResStringPool::stringAt#char16_t\* ResStringPool::stringAt#g" android-utils/aapt/ResourceTypes.cpp
+
+umask "${OLD_UMASK}"

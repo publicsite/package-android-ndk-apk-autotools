@@ -1,5 +1,8 @@
 #!/bin/sh
 
+OLD_UMASK="$(umask)"
+umask 0022
+
 cd android-utils
 
 ./autogen.sh
@@ -15,3 +18,5 @@ CXXFLAGS="-fpermissive" make
 #Where AndroidManifest.xml is a normal xml (ie. not axml)
 
 #https://stackoverflow.com/questions/11367314/how-to-convert-xml-to-android-binary-xml
+
+umask "${OLD_UMASK}"

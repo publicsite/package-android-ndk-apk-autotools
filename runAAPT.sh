@@ -1,4 +1,8 @@
 #!/bin/sh
+
+OLD_UMASK="$(umask)"
+umask 0022
+
 AAPT="${PWD}/android-utils/aapt/aapt"
 
 mkdir bin
@@ -17,3 +21,5 @@ mv my.jar project/
 cd project
 
 $AAPT package -M AndroidManifest.xml -F My.apk -I my.jar lib
+
+umask "${OLD_UMASK}"

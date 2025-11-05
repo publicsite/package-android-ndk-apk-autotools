@@ -1,5 +1,8 @@
 #!/bin/sh
 
+OLD_UMASK="$(umask)"
+umask 0022
+
 mkdir dxclasses
 javac $(find AndroidDx/src/main -name "*.java") -d dxclasses
 printf "Main-Class: com.android.dx.command.Main\n\n" > manifest.txt
@@ -7,3 +10,5 @@ jar cfm dx.jar manifest.txt -C dxclasses com
 
 ##run with
 ##java -jar dx.jar
+
+umask "${OLD_UMASK}"
